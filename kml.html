@@ -5,10 +5,10 @@
 <title>Merge of cb_2015_37_place_500k and Cooper for North Carolina - 2016 Fourth Quarter - Google Fusion Tables</title>
 <style type="text/css">
 html, body, #googft-mapCanvas {
-  height: 600;
+  height: 600px;
   margin: 0;
   padding: 0;
-  width: 1000 px;
+  width: 1000px;
 }
 </style>
 
@@ -27,12 +27,13 @@ html, body, #googft-mapCanvas {
     mapDiv.style.width = isMobile ? '100%' : '1000px';
     mapDiv.style.height = isMobile ? '100%' : '600px';
     var map = new google.maps.Map(mapDiv, {
-      center: new google.maps.LatLng(34.739846045169706, -79.775650390625),
+      center: new google.maps.LatLng(35.31561227456153, -79.68775976562499),
       zoom: 7,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend-open'));
     map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
+
     layer = new google.maps.FusionTablesLayer({
       map: map,
       heatmap: { enabled: false },
@@ -46,6 +47,7 @@ html, body, #googft-mapCanvas {
         templateId: 2
       }
     });
+
     if (isMobile) {
       var legend = document.getElementById('googft-legend');
       var legendOpenButton = document.getElementById('googft-legend-open');
@@ -63,6 +65,7 @@ html, body, #googft-mapCanvas {
       }
     }
   }
+
   google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 </head>
